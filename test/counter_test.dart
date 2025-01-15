@@ -31,7 +31,7 @@ void main() {
       expect(val, -1);
     });
     test(
-        'given counter class when counter is resetted counter value should be 0',
+        'given counter class when it is resetted counter value should be 0',
         () {
       counter.resetCounter();
       final val = counter.counter;
