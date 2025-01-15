@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unit_testing/counter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -29,11 +30,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  Counter counter = Counter();
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      counter.incrementCounter();
     });
   }
 
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '${counter.counter}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
