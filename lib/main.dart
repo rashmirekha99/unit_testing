@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 import 'package:unit_testing/counter.dart';
 import 'package:unit_testing/screens/todo_screen.dart';
+import 'package:unit_testing/services/todo_servvices.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,18 +10,20 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
+    TodoServices todoServices = TodoServices(Client());
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(
-        title: 'Counter App',
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: TodoScreen(
+          todos: todoServices.getTodo(),
+        ));
   }
 }
 

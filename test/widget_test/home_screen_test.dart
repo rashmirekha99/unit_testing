@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:unit_testing/main.dart';
 
 void main() {
-  group('counter test', () {
+  group('home screen test', () {
     testWidgets('given counter 0  when increment button clicked it should be 1',
         (tester) async {
       await tester.pumpWidget(
