@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TodoScreen(),
+      home: const MyHomePage(
+        title: 'Counter App',
+      ),
     );
   }
 }
@@ -38,6 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
       counter.incrementCounter();
     });
   }
+
+ 
 
   @override
   Widget build(BuildContext context) {
